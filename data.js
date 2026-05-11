@@ -8,6 +8,12 @@ window.COMP346_DATA = [
         "title": "Q1 Zero-Crossing Rate",
         "englishQuestion": "Which time-domain feature counts how often a signal crosses the horizontal axis and indicates noisy, high-frequency content?",
         "chineseQuestion": "哪个时域特征计算信号穿过水平轴的次数，并常表示噪声性、高频内容？",
+        "options": [
+          {"label": "A", "english": "Root-mean-square energy (RMSE)", "chinese": "均方根能量（RMSE）"},
+          {"label": "B", "english": "Amplitude Envelope (AE)", "chinese": "振幅包络（AE）"},
+          {"label": "C", "english": "Zero-Crossing Rate (ZCR)", "chinese": "过零率（ZCR）"},
+          {"label": "D", "english": "Spectral Centroid (SC)", "chinese": "频谱质心（SC）"}
+        ],
         "englishAnswer": "Correct answer: C. Zero-Crossing Rate (ZCR). ZCR counts sign changes in the waveform, so noisy or high-frequency sounds usually have a higher ZCR.",
         "chineseAnswer": "正确答案：C。Zero-Crossing Rate (ZCR)。ZCR 统计波形符号变化/过零次数，因此噪声性强或高频成分多的声音通常 ZCR 更高。",
         "id": "a-q1",
@@ -18,6 +24,12 @@ window.COMP346_DATA = [
         "title": "Q2 Loudness",
         "englishQuestion": "Which statement best describes loudness in acoustics?",
         "chineseQuestion": "哪句话最准确描述声学中的 loudness？",
+        "options": [
+          {"label": "A", "english": "It is an objective measurement of intensity as sound power per unit area.", "chinese": "它是把强度作为单位面积声功率来测量的客观量。"},
+          {"label": "B", "english": "It is the perceptual property of intensity that is influenced by duration and frequency.", "chinese": "它是人对强度的感知属性，会受持续时间和频率影响。"},
+          {"label": "C", "english": "It is solely determined by the fundamental frequency of the sound wave.", "chinese": "它只由声波的基频决定。"},
+          {"label": "D", "english": "It is directly proportional to the peak deviation of the sinusoid from its mean.", "chinese": "它与正弦波相对均值的峰值偏移成正比。"}
+        ],
         "englishAnswer": "Correct answer: B. Loudness is the perceptual property of intensity, influenced by physical intensity but also by frequency, duration, and human hearing.",
         "chineseAnswer": "正确答案：B。Loudness 是人对强度的感知属性，受物理强度影响，也受频率、持续时间和听觉系统影响。",
         "id": "a-q2",
@@ -28,6 +40,12 @@ window.COMP346_DATA = [
         "title": "Q3 Wide STFT Window",
         "englishQuestion": "What is the main consequence of using a very wide spectrogram window?",
         "chineseQuestion": "生成 spectrogram 时使用很宽的窗口，主要后果是什么？",
+        "options": [
+          {"label": "A", "english": "It improves both time and frequency resolution simultaneously.", "chinese": "它同时提高时间分辨率和频率分辨率。"},
+          {"label": "B", "english": "It results in excellent frequency resolution but poor time resolution.", "chinese": "它带来很好的频率分辨率，但时间分辨率较差。"},
+          {"label": "C", "english": "It causes severe spectral leakage due to sharp edges at the boundaries.", "chinese": "它会因边界尖锐而造成严重 spectral leakage。"},
+          {"label": "D", "english": "It perfectly aligns the frequency bins with Western musical pitch classes.", "chinese": "它会让频率 bins 与西方音乐 pitch classes 完美对齐。"}
+        ],
         "englishAnswer": "Correct answer: B. A wide window gives excellent frequency resolution but poor time resolution, because each frame covers a longer time span.",
         "chineseAnswer": "正确答案：B。宽窗口带来更好的频率分辨率，但时间分辨率更差，因为每一帧覆盖更长时间。",
         "id": "a-q3",
@@ -38,6 +56,12 @@ window.COMP346_DATA = [
         "title": "Q4 Transients in Spectrograms",
         "englishQuestion": "How are transient sounds such as drum hits usually represented in a spectrogram?",
         "chineseQuestion": "鼓点等瞬态声音在 spectrogram 中通常如何表现？",
+        "options": [
+          {"label": "A", "english": "As stacks of horizontal lines.", "chinese": "表现为一叠水平线。"},
+          {"label": "B", "english": "As localized energy blobs.", "chinese": "表现为局部能量块。"},
+          {"label": "C", "english": "As vertical spikes.", "chinese": "表现为垂直尖峰。"},
+          {"label": "D", "english": "As smooth sinusoidal curves spanning the x-axis.", "chinese": "表现为沿 x 轴延伸的平滑正弦曲线。"}
+        ],
         "englishAnswer": "Correct answer: C. Transients appear as vertical spikes, because energy rises sharply over a short time across many frequencies.",
         "chineseAnswer": "正确答案：C。瞬态声音通常表现为垂直尖峰，因为能量在很短时间内、跨多个频率快速上升。",
         "id": "a-q4",
@@ -48,6 +72,12 @@ window.COMP346_DATA = [
         "title": "Q5 Median Filtering before SSM",
         "englishQuestion": "Why might a median filter be preferred over a moving average before computing an SSM?",
         "chineseQuestion": "计算 SSM 前，为什么 median filter 可能比 moving average 更合适？",
+        "options": [
+          {"label": "A", "english": "Median filtering better preserves sharp edges between different homogeneous regions.", "chinese": "Median filtering 更能保留不同同质区域之间的尖锐边界。"},
+          {"label": "B", "english": "Median filtering automatically downsamples the feature rate to match the hierarchical level of a macro structure.", "chinese": "Median filtering 会自动降低特征帧率以匹配宏观结构层级。"},
+          {"label": "C", "english": "Median filtering smooths high-dimensional timbral features into lower-dimensional regions for segmentation.", "chinese": "Median filtering 会把高维音色特征平滑成低维区域用于分段。"},
+          {"label": "D", "english": "Median filtering cyclically shifts the features to instantly achieve transposition invariance.", "chinese": "Median filtering 会循环移位特征，从而立即实现转调不变性。"}
+        ],
         "englishAnswer": "Correct answer: A. Median filtering smooths local noise while preserving sharp boundaries between homogeneous musical sections.",
         "chineseAnswer": "正确答案：A。Median filter 能平滑局部噪声，同时更好保留不同音乐段落之间的尖锐边界。",
         "id": "a-q5",
@@ -58,6 +88,12 @@ window.COMP346_DATA = [
         "title": "Q6 Global Threshold Risk",
         "englishQuestion": "What is the risk of using a strict global threshold on an SSM instead of an adaptive threshold?",
         "chineseQuestion": "对 SSM 使用严格 global threshold 而不用 adaptive threshold 的风险是什么？",
+        "options": [
+          {"label": "A", "english": "It forces the resulting matrix to become asymmetric, violating the fundamental properties of distance metrics.", "chinese": "它会强迫矩阵变成非对称，违反距离度量的基本性质。"},
+          {"label": "B", "english": "It may remove structurally significant repetitions if the song has varying volume or dynamics across sections.", "chinese": "如果不同段落音量或动态不同，它可能删除结构上重要的重复。"},
+          {"label": "C", "english": "It automatically filters out timbral information, forcing the algorithm to rely only on harmonic progressions.", "chinese": "它会自动滤掉音色信息，迫使算法只依赖和声进行。"},
+          {"label": "D", "english": "It increases the resolution of the SSM indefinitely, leading to severe over-segmentation.", "chinese": "它会无限提高 SSM 分辨率，导致严重过度分段。"}
+        ],
         "englishAnswer": "Correct answer: B. A global threshold can remove meaningful repetitions when volume, dynamics, or similarity levels vary across sections.",
         "chineseAnswer": "正确答案：B。当歌曲不同段落的音量、动态或相似度水平变化时，全局阈值可能错误删除结构上重要的重复。",
         "id": "a-q6",
@@ -68,6 +104,12 @@ window.COMP346_DATA = [
         "title": "Q7 Tactus",
         "englishQuestion": "What is tactus in metrical structure?",
         "chineseQuestion": "metrical structure 中的 tactus 是什么？",
+        "options": [
+          {"label": "A", "english": "The lowest rhythmic hierarchy level, representing the fastest possible pulse such as 16th notes.", "chinese": "节奏层级中最低的一层，代表最快的脉冲，例如十六分音符。"},
+          {"label": "B", "english": "A higher-level grouping of beats defined strictly by accent patterns and time signatures.", "chinese": "严格由重音模式和拍号定义的更高层 beat 分组。"},
+          {"label": "C", "english": "The predominant pulse level of a piece, typically with a period of 0.5 to 1.0 seconds.", "chinese": "一首音乐中主要感知到的脉冲层级，周期通常为 0.5 到 1.0 秒。"},
+          {"label": "D", "english": "The unintentional gradual speed-up or slow-down of a musical performance.", "chinese": "音乐表演中无意的逐渐加速或减速。"}
+        ],
         "englishAnswer": "Correct answer: C. Tactus is the main perceived pulse level, often roughly 0.5 to 1.0 seconds per beat.",
         "chineseAnswer": "正确答案：C。Tactus 是主要感知到的拍点层级，通常每拍约 0.5 到 1.0 秒。",
         "id": "a-q7",
@@ -78,6 +120,12 @@ window.COMP346_DATA = [
         "title": "Q8 CNN Blocks",
         "englishQuestion": "What happens when many Conv-ReLU-Pool blocks are stacked?",
         "chineseQuestion": "堆叠多个 Conv-ReLU-Pool 模块通常会发生什么？",
+        "options": [
+          {"label": "A", "english": "The spatial size in time/frequency increases, while the number of channels decreases.", "chinese": "时间/频率空间尺寸增加，而通道数减少。"},
+          {"label": "B", "english": "Both the spatial size and the number of channels increase exponentially.", "chinese": "空间尺寸和通道数都会指数级增加。"},
+          {"label": "C", "english": "The spatial size in time/frequency decreases, while the number of channels increases.", "chinese": "时间/频率空间尺寸减小，而通道数增加。"},
+          {"label": "D", "english": "The spatial size and number of channels remain fixed, but the receptive field shrinks.", "chinese": "空间尺寸和通道数保持不变，但感受野缩小。"}
+        ],
         "englishAnswer": "Correct answer: C. Spatial size in time/frequency decreases through pooling, while the number of learned feature channels usually increases.",
         "chineseAnswer": "正确答案：C。经过 pooling，时间/频率空间尺寸减小；同时学习到的特征通道数通常增加。",
         "id": "a-q8",
@@ -88,6 +136,12 @@ window.COMP346_DATA = [
         "title": "Q9 Fingerprinting Specificity",
         "englishQuestion": "Where does audio identification/fingerprinting sit on the specificity-granularity plane?",
         "chineseQuestion": "Audio identification/fingerprinting 在 specificity-granularity 平面上属于哪里？",
+        "options": [
+          {"label": "A", "english": "Low specificity, document-level granularity.", "chinese": "低 specificity，文档级 granularity。"},
+          {"label": "B", "english": "High specificity, fragment-level granularity.", "chinese": "高 specificity，片段级 granularity。"},
+          {"label": "C", "english": "Medium specificity, fragment-level granularity.", "chinese": "中等 specificity，片段级 granularity。"},
+          {"label": "D", "english": "High specificity, document-level granularity.", "chinese": "高 specificity，文档级 granularity。"}
+        ],
         "englishAnswer": "Correct answer: B. It has high specificity and fragment-level granularity, because it identifies an exact track from short audio snippets.",
         "chineseAnswer": "正确答案：B。它是高 specificity、fragment-level granularity，因为它要从短片段中识别具体某一首歌。",
         "id": "a-q9",
@@ -98,6 +152,12 @@ window.COMP346_DATA = [
         "title": "Q10 Teacher Forcing",
         "englishQuestion": "What is teacher forcing in autoregressive music generation?",
         "chineseQuestion": "自回归音乐生成中的 teacher forcing 是什么？",
+        "options": [
+          {"label": "A", "english": "Evaluating the model's perplexity on a test set.", "chinese": "在测试集上评估模型 perplexity。"},
+          {"label": "B", "english": "Pruning the generation branches using beam search.", "chinese": "使用 beam search 剪枝生成分支。"},
+          {"label": "C", "english": "Using the model's prediction at t-1 as the input for time step t.", "chinese": "使用模型在 t-1 的预测作为 t 时刻输入。"},
+          {"label": "D", "english": "Using the ground truth output at t-1 as the input for the next time step t during training.", "chinese": "训练时使用 t-1 的真实输出作为下一步 t 的输入。"}
+        ],
         "englishAnswer": "Correct answer: D. During training, the model receives the ground-truth previous output as the next input, rather than its own previous prediction.",
         "chineseAnswer": "正确答案：D。训练时模型下一步输入使用真实的上一时刻输出，而不是模型自己上一时刻的预测。",
         "id": "a-q10",
@@ -108,6 +168,12 @@ window.COMP346_DATA = [
         "title": "Q11 Down-Sampling",
         "englishQuestion": "Why is audio often down-sampled in music/audio research?",
         "chineseQuestion": "为什么音乐/音频研究中常把音频降采样？",
+        "options": [
+          {"label": "A", "english": "To intentionally introduce aliasing artifacts that help identify the genre.", "chinese": "故意引入 aliasing artifacts 来帮助识别 genre。"},
+          {"label": "B", "english": "To speed up processing and save disk space, since very high-frequency content often has less structural information.", "chinese": "为了加快处理并节省存储，因为很高频的内容通常结构信息较少。"},
+          {"label": "C", "english": "To increase temporal resolution, allowing more precise onset detection.", "chinese": "为了提高时间分辨率，从而更精确检测 onset。"},
+          {"label": "D", "english": "To automatically filter out low-frequency noise such as DC offset or mains hum.", "chinese": "为了自动滤除 DC offset 或电源嗡声等低频噪声。"}
+        ],
         "englishAnswer": "Correct answer: B. It speeds processing and saves storage, while very high-frequency content often carries less useful structural information for many MIR tasks.",
         "chineseAnswer": "正确答案：B。降采样能加快处理、节省空间；对许多 MIR 任务来说，特别高频的信息通常结构价值较小。",
         "id": "a-q11",
@@ -118,6 +184,12 @@ window.COMP346_DATA = [
         "title": "Q12 MIDI Pitch Frequency",
         "englishQuestion": "What is the frequency formula for MIDI pitch p when A4, pitch 69, is 440 Hz?",
         "chineseQuestion": "A4 是 MIDI pitch 69 且频率 440Hz 时，MIDI pitch p 的频率公式是什么？",
+        "options": [
+          {"label": "A", "english": "F(p) = 2^((p - 69) / 12) * 440", "chinese": "F(p) = 2^((p - 69) / 12) * 440"},
+          {"label": "B", "english": "F(p) = 12^((p - 69) / 2) * 440", "chinese": "F(p) = 12^((p - 69) / 2) * 440"},
+          {"label": "C", "english": "F(p) = 2^((69 - p) / 12) * 440", "chinese": "F(p) = 2^((69 - p) / 12) * 440"},
+          {"label": "D", "english": "F(p) = 440^((p - 69) / 12) * 2", "chinese": "F(p) = 440^((p - 69) / 12) * 2"}
+        ],
         "englishAnswer": "Correct answer: A. F(p) = 2^((p - 69) / 12) * 440. Each semitone changes frequency by a factor of 2^(1/12).",
         "chineseAnswer": "正确答案：A。F(p) = 2^((p - 69) / 12) * 440。每升高一个半音，频率乘以 2^(1/12)。",
         "id": "a-q12",
@@ -128,6 +200,12 @@ window.COMP346_DATA = [
         "title": "Q13 Fourier Theorem",
         "englishQuestion": "What does Fourier's Theorem say about complex periodic signals?",
         "chineseQuestion": "Fourier 定理对复杂周期信号说明了什么？",
+        "options": [
+          {"label": "A", "english": "They can be constructed by summing simple sine waves of different frequencies, amplitudes, and phases.", "chinese": "它们可以由不同频率、幅度和相位的简单正弦波相加构成。"},
+          {"label": "B", "english": "They cannot be decomposed into smaller frequency components without losing phase information.", "chinese": "它们不能被分解为更小的频率成分，否则会丢失相位信息。"},
+          {"label": "C", "english": "They are composed entirely of in-phase components with a static initial phase.", "chinese": "它们完全由同相位且初始相位固定的成分组成。"},
+          {"label": "D", "english": "They only contain frequencies above the Nyquist limit.", "chinese": "它们只包含 Nyquist limit 以上的频率。"}
+        ],
         "englishAnswer": "Correct answer: A. Complex periodic signals can be represented as sums of sine waves with different frequencies, amplitudes, and phases.",
         "chineseAnswer": "正确答案：A。复杂周期信号可以表示为多个不同频率、幅度和相位的正弦波之和。",
         "id": "a-q13",
@@ -138,6 +216,12 @@ window.COMP346_DATA = [
         "title": "Q14 Hann Window",
         "englishQuestion": "Why is a Hann window preferred over a rectangular window in STFT?",
         "chineseQuestion": "STFT 中为什么 Hann window 通常优于 rectangular window？",
+        "options": [
+          {"label": "A", "english": "It increases the computational speed of the Fast Fourier Transform.", "chinese": "它提高 Fast Fourier Transform 的计算速度。"},
+          {"label": "B", "english": "It aligns the frequency bins perfectly with Western musical notes.", "chinese": "它让频率 bins 与西方音乐音符完美对齐。"},
+          {"label": "C", "english": "It smooths the edges of the frame to zero, preventing spectral leakage.", "chinese": "它把帧边缘平滑到 0，从而减少 spectral leakage。"},
+          {"label": "D", "english": "It natively compresses high frequencies to match human auditory perception.", "chinese": "它原生压缩高频以匹配人类听觉感知。"}
+        ],
         "englishAnswer": "Correct answer: C. It tapers frame edges toward zero, reducing discontinuities and spectral leakage.",
         "chineseAnswer": "正确答案：C。Hann window 将帧边缘平滑到接近 0，减少边界突变和 spectral leakage。",
         "id": "a-q14",
@@ -148,6 +232,12 @@ window.COMP346_DATA = [
         "title": "Q15 CQT",
         "englishQuestion": "Why is CQT often preferred over STFT for chord recognition and transcription?",
         "chineseQuestion": "为什么和弦识别和音乐转录中常用 CQT 而不是 STFT？",
+        "options": [
+          {"label": "A", "english": "CQT frequency bins map directly to musical pitch classes, forming a logarithmic scale.", "chinese": "CQT 频率 bins 直接映射到音乐 pitch classes，形成对数尺度。"},
+          {"label": "B", "english": "CQT uses a fixed window size across all frequency bands for faster computation.", "chinese": "CQT 对所有频段使用固定窗口大小以加快计算。"},
+          {"label": "C", "english": "CQT natively applies a Mel filterbank to capture instrument timbre without extra steps.", "chinese": "CQT 原生应用 Mel filterbank，无需额外步骤即可捕捉乐器音色。"},
+          {"label": "D", "english": "CQT completely eliminates spectral leakage, making it perfect for isolating individual partials.", "chinese": "CQT 完全消除 spectral leakage，因此能完美分离单个泛音。"}
+        ],
         "englishAnswer": "Correct answer: A. CQT uses logarithmically spaced frequency bins that align better with musical pitch classes.",
         "chineseAnswer": "正确答案：A。CQT 的频率 bins 是对数间隔，更贴近音乐中的音高类别和半音结构。",
         "id": "a-q15",
@@ -158,6 +248,12 @@ window.COMP346_DATA = [
         "title": "Q16 Self-Similarity Matrix",
         "englishQuestion": "What is the intuition behind an SSM in music structure analysis?",
         "chineseQuestion": "音乐结构分析中 SSM 的核心直觉是什么？",
+        "options": [
+          {"label": "A", "english": "To translate audio features directly into sheet music notation.", "chinese": "把音频特征直接翻译成五线谱记谱。"},
+          {"label": "B", "english": "To compare every time instant of a song with every other time instant to find structurally similar regions.", "chinese": "把歌曲中每个时间点与所有其他时间点比较，寻找结构相似区域。"},
+          {"label": "C", "english": "To isolate individual instruments by removing non-structural noise.", "chinese": "通过去除非结构噪声来分离单个乐器。"},
+          {"label": "D", "english": "To extract tempo and beat information exclusively.", "chinese": "只用于提取 tempo 和 beat 信息。"}
+        ],
         "englishAnswer": "Correct answer: B. It compares every time point with every other time point to reveal repeated or structurally similar regions.",
         "chineseAnswer": "正确答案：B。SSM 把每个时间点和所有其他时间点比较，用来发现重复或结构相似的区域。",
         "id": "a-q16",
@@ -168,6 +264,12 @@ window.COMP346_DATA = [
         "title": "Q17 Transposition Invariant SSM",
         "englishQuestion": "How does a transposition-invariant SSM handle key modulation?",
         "chineseQuestion": "Transposition-invariant SSM 如何处理转调？",
+        "options": [
+          {"label": "A", "english": "By filtering the SSM with multiple diagonal kernels corresponding to different structural changes.", "chinese": "用多个对应不同结构变化的对角核滤波 SSM。"},
+          {"label": "B", "english": "By evaluating the Euclidean distance between raw audio waveforms.", "chinese": "通过计算原始音频波形之间的欧氏距离。"},
+          {"label": "C", "english": "By computing 12 cyclic shifts of chroma features and taking the maximum similarity across all shifts.", "chinese": "对 chroma 特征计算 12 种循环移位，并取所有移位中的最大相似度。"},
+          {"label": "D", "english": "By applying an adaptive threshold that normalizes volume variations across sections.", "chinese": "通过自适应阈值归一化不同段落间的音量变化。"}
+        ],
         "englishAnswer": "Correct answer: C. It cyclically shifts chroma features through 12 pitch-class shifts and takes the best similarity across shifts.",
         "chineseAnswer": "正确答案：C。它对 chroma 特征做 12 种循环移位，并在所有移位中取最大相似度。",
         "id": "a-q17",
@@ -178,6 +280,12 @@ window.COMP346_DATA = [
         "title": "Q18 Onset vs Beat",
         "englishQuestion": "What is the difference between an onset and a beat?",
         "chineseQuestion": "onset 和 beat 的区别是什么？",
+        "options": [
+          {"label": "A", "english": "An onset is an abstract, perfectly isochronous grid, whereas a beat represents a sudden physical energy rise.", "chinese": "Onset 是抽象且完全等时的网格，而 beat 表示突然的物理能量上升。"},
+          {"label": "B", "english": "An onset is a physical event marking the start of a note, whereas a beat is a perceived, regularly recurring point in time.", "chinese": "Onset 是音符开始的物理事件，而 beat 是感知到的规律重复时间点。"},
+          {"label": "C", "english": "An onset requires continuous periodicity estimation, whereas a beat is identified through naive peak picking.", "chinese": "Onset 需要连续周期估计，而 beat 通过简单峰值检测识别。"},
+          {"label": "D", "english": "An onset can only be identified during silence, whereas a beat must always align with a transient.", "chinese": "Onset 只能在静音期间识别，而 beat 必须总是对齐瞬态。"}
+        ],
         "englishAnswer": "Correct answer: B. An onset is a physical event marking the start of a note or sound; a beat is a perceived regular pulse point in time.",
         "chineseAnswer": "正确答案：B。Onset 是音符或声音开始的物理事件；beat 是人感知到的规律性拍点。",
         "id": "a-q18",
@@ -188,6 +296,12 @@ window.COMP346_DATA = [
         "title": "Q19 PLP",
         "englishQuestion": "How are frequency and phase determined in the PLP algorithm?",
         "chineseQuestion": "PLP 算法中 local pulse kernel 的频率和相位如何确定？",
+        "options": [
+          {"label": "A", "english": "Both frequency and phase are determined exclusively by the short-time autocorrelation tempogram.", "chinese": "频率和相位都只由短时自相关 tempogram 决定。"},
+          {"label": "B", "english": "Frequency is derived from logarithmic compression, and phase is obtained via half-wave rectification.", "chinese": "频率来自对数压缩，相位通过半波整流获得。"},
+          {"label": "C", "english": "Frequency is set by the energy-based novelty function, and phase is determined by the Fourier tempogram.", "chinese": "频率由基于能量的 novelty function 设定，相位由 Fourier tempogram 决定。"},
+          {"label": "D", "english": "Frequency is determined by the dominant period from the tempogram, and phase is derived from the novelty function to align with the onset.", "chinese": "频率由 tempogram 中的主导周期决定，相位由 novelty function 得出以对齐 onset。"}
+        ],
         "englishAnswer": "Correct answer: D. Frequency comes from the dominant period in the tempogram, while phase is aligned using the novelty function.",
         "chineseAnswer": "正确答案：D。频率由 tempogram 中的主导周期决定；相位由 novelty function 对齐到实际 onset。",
         "id": "a-q19",
@@ -198,6 +312,12 @@ window.COMP346_DATA = [
         "title": "Q20 Imbalanced Dataset Accuracy",
         "englishQuestion": "What happens if a lazy classifier always predicts the majority class in a 990 Pop / 10 Jazz dataset?",
         "chineseQuestion": "在 990 首 Pop、10 首 Jazz 的不平衡数据集中，lazy model 总预测多数类会怎样？",
+        "options": [
+          {"label": "A", "english": "The F1-score will be approximately 0.99 due to perfect precision.", "chinese": "由于 precision 完美，F1-score 大约会是 0.99。"},
+          {"label": "B", "english": "The model achieves 99% accuracy.", "chinese": "模型会达到 99% accuracy。"},
+          {"label": "C", "english": "The Area Under the Curve (AUC) will perfectly equal 1.0.", "chinese": "AUC 会完美等于 1.0。"},
+          {"label": "D", "english": "The recall for the minority class will be artificially inflated to 100%.", "chinese": "少数类 recall 会被人为抬高到 100%。"}
+        ],
         "englishAnswer": "Correct answer: B. It achieves 99% accuracy, showing why accuracy alone is misleading for imbalanced datasets.",
         "chineseAnswer": "正确答案：B。它会得到 99% accuracy，这说明不平衡数据上只看 accuracy 会误导。",
         "id": "a-q20",
@@ -208,6 +328,12 @@ window.COMP346_DATA = [
         "title": "Q21 Mid-Level Feature",
         "englishQuestion": "Which option best exemplifies a mid-level feature for bridging the semantic gap?",
         "chineseQuestion": "哪一项最像用于弥合 semantic gap 的 mid-level feature？",
+        "options": [
+          {"label": "A", "english": "The overall genre of the track, such as Jazz or Rock.", "chinese": "曲目的整体 genre，例如 Jazz 或 Rock。"},
+          {"label": "B", "english": "The raw amplitude envelope representing the physical sound wave.", "chinese": "表示物理声波的原始 amplitude envelope。"},
+          {"label": "C", "english": "Pitch- and beat-related descriptors, such as note onsets, MFCCs and chroma.", "chinese": "音高和节拍相关描述符，例如 note onsets、MFCCs 和 chroma。"},
+          {"label": "D", "english": "The predicted continuous valence and arousal coordinates on a 2D emotion plane.", "chinese": "二维情绪平面上预测的连续 valence 和 arousal 坐标。"}
+        ],
         "englishAnswer": "Correct answer: C. Pitch- and beat-related descriptors, MFCCs, and chroma are between raw audio and high-level labels.",
         "chineseAnswer": "正确答案：C。音高/节拍相关描述符、MFCC、chroma 位于原始音频和高级语义标签之间。",
         "id": "a-q21",
@@ -218,6 +344,12 @@ window.COMP346_DATA = [
         "title": "Q22 MAP",
         "englishQuestion": "Which metric evaluates the whole ranked list and rewards relevant items near the top?",
         "chineseQuestion": "哪个指标评估整个检索排序列表，并奖励相关结果排在前面？",
+        "options": [
+          {"label": "A", "english": "F1-Score@n", "chinese": "F1-Score@n"},
+          {"label": "B", "english": "Mean Reciprocal Rank (MRR)", "chinese": "平均倒数排名（MRR）"},
+          {"label": "C", "english": "Mean Average Precision (MAP)", "chinese": "平均精度均值（MAP）"},
+          {"label": "D", "english": "Hits@K", "chinese": "Hits@K"}
+        ],
         "englishAnswer": "Correct answer: C. Mean Average Precision (MAP) evaluates ranking quality across the full list and rewards early relevant matches.",
         "chineseAnswer": "正确答案：C。Mean Average Precision (MAP) 评估整个排序列表，并奖励相关结果出现在靠前位置。",
         "id": "a-q22",
@@ -228,6 +360,12 @@ window.COMP346_DATA = [
         "title": "Q23 Piano-Roll Timing",
         "englishQuestion": "Why does a standard piano-roll make expressive timing variations difficult?",
         "chineseQuestion": "为什么标准 piano-roll 难以表示 expressive timing variation？",
+        "options": [
+          {"label": "A", "english": "Generative sequence models cannot process multi-dimensional arrays, forcing arbitrary flattening.", "chinese": "生成序列模型不能处理多维数组，因此必须任意展平。"},
+          {"label": "B", "english": "Sustained notes are represented by single isolated tokens without offset values, making exact duration impossible.", "chinese": "延音由没有 offset 值的单个孤立 token 表示，因此无法计算精确持续时间。"},
+          {"label": "C", "english": "The matrix uses one vocabulary dimension for both pitch and duration, irreversibly compressing timing data.", "chinese": "矩阵用同一个词汇维度表示 pitch 和 duration，不可逆地压缩 timing 数据。"},
+          {"label": "D", "english": "The time axis is strictly quantized into rigid discrete metrical steps, leaving no way to represent micro-timing deviations.", "chinese": "时间轴被严格量化为固定离散节拍步长，无法表示微小时值偏移。"}
+        ],
         "englishAnswer": "Correct answer: D. Its time axis is rigidly quantized into fixed steps, so micro-timing and gradual tempo changes are hard to represent.",
         "chineseAnswer": "正确答案：D。它的时间轴被固定量化成离散步长，因此很难表示微小时值偏移和渐变速度。",
         "id": "a-q23",
@@ -238,6 +376,12 @@ window.COMP346_DATA = [
         "title": "Q24 Generative Music Benchmarks",
         "englishQuestion": "How do modern benchmarks like AI Song Contest evaluate generative music models?",
         "chineseQuestion": "AI Song Contest 等现代 benchmark 如何评估生成音乐模型？",
+        "options": [
+          {"label": "A", "english": "By relying solely on Turing tests to gauge human appeal.", "chinese": "只依赖图灵测试来衡量人类吸引力。"},
+          {"label": "B", "english": "By analysing histograms and pitch counts to detect novelty.", "chinese": "通过分析直方图和音高计数来检测新颖性。"},
+          {"label": "C", "english": "By adopting a multifaceted approach combining quantitative and qualitative feedback.", "chinese": "采用结合定量和定性反馈的多维方法。"},
+          {"label": "D", "english": "By computing log-likelihood and perplexity to ensure high accuracy of generated music.", "chinese": "通过计算 log-likelihood 和 perplexity 来确保生成音乐高准确率。"}
+        ],
         "englishAnswer": "Correct answer: C. They use a multifaceted approach, combining quantitative analysis with qualitative human feedback.",
         "chineseAnswer": "正确答案：C。它们采用多维评估，结合定量分析和人类主观/定性反馈。",
         "id": "a-q24",
@@ -248,6 +392,12 @@ window.COMP346_DATA = [
         "title": "Q25 MusicVAE Latent Space",
         "englishQuestion": "What is the generative advantage of a continuous latent space such as MusicVAE?",
         "chineseQuestion": "MusicVAE 这类连续 latent space 的生成优势是什么？",
+        "options": [
+          {"label": "A", "english": "It allows the model to predict raw waveforms directly at 44,100 samples per second without any decoding bottleneck.", "chinese": "它允许模型无解码瓶颈地直接以每秒 44,100 采样预测原始波形。"},
+          {"label": "B", "english": "It snaps compressed audio to a discrete codebook of tokens, perfectly preserving text-to-audio semantics.", "chinese": "它把压缩音频映射到离散 token codebook，完美保留文本到音频语义。"},
+          {"label": "C", "english": "It allows smooth mathematical interpolation between different musical sequences, such as morphing one drum beat into another.", "chinese": "它允许在不同音乐序列之间做平滑数学插值，例如把一个鼓点逐渐变形成另一个。"},
+          {"label": "D", "english": "It eliminates autoregressive continuation entirely by generating the whole song in one forward pass.", "chinese": "它通过一次前向传播生成整首歌，从而完全消除自回归续写需求。"}
+        ],
         "englishAnswer": "Correct answer: C. It allows smooth interpolation between musical sequences, such as morphing one drum pattern into another.",
         "chineseAnswer": "正确答案：C。它允许在音乐序列之间平滑插值，例如把一个鼓点模式逐渐变形成另一个。",
         "id": "a-q25",

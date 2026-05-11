@@ -26,6 +26,9 @@ function normalise(value) {
 
 function matchesSearch(item) {
   if (!state.search) return true;
+  const options = (item.options || [])
+    .flatMap((option) => [option.label, option.english, option.chinese])
+    .join(" ");
   const haystack = [
     item.title,
     item.englishQuestion,
@@ -33,6 +36,7 @@ function matchesSearch(item) {
     item.englishAnswer,
     item.chineseAnswer,
     item.tag,
+    options,
   ].join(" ").toLowerCase();
   return haystack.includes(state.search);
 }
@@ -90,6 +94,30 @@ function renderModuleFilter() {
   clearModuleFilterButton.disabled = state.selectedModules.size === 0;
 }
 
+function renderOptions(item) {
+  if (!item.options || !item.options.length) return "";
+  return `
+    <div class="options-block">
+      <span class="label">Options / 选项</span>
+      <div class="option-list">
+        ${item.options
+          .map(
+            (option) => `
+              <div class="option-row">
+                <span class="option-letter">${option.label}</span>
+                <div>
+                  <p>${option.english}</p>
+                  <p>${option.chinese}</p>
+                </div>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
+    </div>
+  `;
+}
+
 function renderCards() {
   const category = categories[state.categoryIndex];
   const moduleItems = category.items.filter((item) => matchesModule(item, category));
@@ -133,6 +161,7 @@ function renderCards() {
               <span class="label">中文问题</span>
               <p class="text">${item.chineseQuestion}</p>
             </div>
+            ${renderOptions(item)}
             <div class="answer-wrap">
               <div class="qa-line answer">
                 <span class="label">English answer</span>

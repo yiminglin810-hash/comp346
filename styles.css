@@ -380,6 +380,53 @@ h2 {
   padding: 16px 18px 18px 30px;
 }
 
+.options-block {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfe;
+  padding: 14px;
+}
+
+.option-list {
+  display: grid;
+  gap: 10px;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.option-row:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.option-letter {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+.option-row p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.option-row p + p {
+  margin-top: 2px;
+  color: var(--muted);
+}
+
 .label {
   display: block;
   margin-bottom: 5px;
