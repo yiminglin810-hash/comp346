@@ -1,6 +1,7 @@
 const state = {
   categoryIndex: 0,
   openCards: new Set(),
+  selectedModules: new Set(),
   search: "",
 };
 
@@ -11,6 +12,8 @@ const cards = document.querySelector("#cards");
 const categoryTitle = document.querySelector("#categoryTitle");
 const frequencyLabel = document.querySelector("#frequencyLabel");
 const searchInput = document.querySelector("#searchInput");
+const moduleFilter = document.querySelector("#moduleFilter");
+const clearModuleFilterButton = document.querySelector("#clearModuleFilterButton");
 const showAllButton = document.querySelector("#showAllButton");
 const hideAllButton = document.querySelector("#hideAllButton");
 const topicCount = document.querySelector("#topicCount");
@@ -34,6 +37,24 @@ function matchesSearch(item) {
   return haystack.includes(state.search);
 }
 
+function itemModule(item, category) {
+  return item.module || category.module || category.title;
+}
+
+function getModules() {
+  return Array.from(
+    new Set(categories.flatMap((category) => category.items.map((item) => itemModule(item, category))))
+  );
+}
+
+function matchesModule(item, category) {
+  return !state.selectedModules.size || state.selectedModules.has(itemModule(item, category));
+}
+
+function matchesFilters(item, category) {
+  return matchesSearch(item) && matchesModule(item, category);
+}
+
 function totalMarks(items) {
   return items.reduce((sum, item) => sum + (item.marks || 0), 0);
 }
@@ -42,23 +63,41 @@ function renderCategories() {
   categoryList.innerHTML = categories
     .map((category, index) => {
       const active = index === state.categoryIndex ? " active" : "";
+      const filteredItems = category.items.filter((item) => matchesModule(item, category));
       return `
         <button class="category-button${active}" type="button" data-category="${index}">
           <strong>${category.title}</strong>
-          <span><em>${category.frequency}</em><em>${category.items.length} 题 / ${totalMarks(category.items)} 分</em></span>
+          <span><em>${category.frequency}</em><em>${filteredItems.length} 题 / ${totalMarks(filteredItems)} 分</em></span>
         </button>
       `;
     })
     .join("");
 }
 
+function renderModuleFilter() {
+  const modules = getModules();
+  moduleFilter.innerHTML = modules
+    .map((moduleName) => {
+      const checked = state.selectedModules.has(moduleName) ? " checked" : "";
+      return `
+        <label class="year-chip">
+          <input type="checkbox" value="${moduleName}"${checked}>
+          <span>${moduleName}</span>
+        </label>
+      `;
+    })
+    .join("");
+  clearModuleFilterButton.disabled = state.selectedModules.size === 0;
+}
+
 function renderCards() {
   const category = categories[state.categoryIndex];
-  const visibleItems = category.items.filter(matchesSearch);
+  const moduleItems = category.items.filter((item) => matchesModule(item, category));
+  const visibleItems = category.items.filter((item) => matchesFilters(item, category));
 
   categoryTitle.textContent = category.title;
-  frequencyLabel.textContent = `${category.frequency} · ${totalMarks(category.items)} marks`;
-  topicCount.textContent = category.items.length;
+  frequencyLabel.textContent = `${category.frequency} · ${totalMarks(moduleItems)} marks`;
+  topicCount.textContent = moduleItems.length;
   visibleCount.textContent = visibleItems.length;
   answerCount.textContent = visibleItems.filter((item) => state.openCards.has(item.id)).length;
 
@@ -68,8 +107,9 @@ function renderCards() {
   }
 
   cards.innerHTML = visibleItems
-    .map((item) => {
+        .map((item) => {
       const isOpen = state.openCards.has(item.id);
+      const moduleName = itemModule(item, category);
       return `
         <article class="question-card${isOpen ? " open" : ""}" data-id="${item.id}">
           <div class="card-header">
@@ -78,7 +118,7 @@ function renderCards() {
                 <span>${item.title}</span>
                 <span class="count-badge" title="${item.tag || category.title}">${item.marks ? `${item.marks} marks` : item.tag}</span>
               </h3>
-              <p>${category.title}${item.tag ? ` · ${item.tag}` : ""}</p>
+              <p>${category.title} · ${moduleName}${item.tag ? ` · ${item.tag}` : ""}</p>
             </div>
             <button class="answer-toggle" type="button" aria-expanded="${isOpen}">
               ${isOpen ? "隐藏答案" : "显示答案"}
@@ -111,6 +151,7 @@ function renderCards() {
 }
 
 function render() {
+  renderModuleFilter();
   renderCategories();
   renderCards();
 }
@@ -138,11 +179,32 @@ cards.addEventListener("click", (event) => {
 
 searchInput.addEventListener("input", (event) => {
   state.search = normalise(event.target.value);
+  renderCategories();
   renderCards();
 });
 
+moduleFilter.addEventListener("change", (event) => {
+  const input = event.target.closest("input[type='checkbox']");
+  if (!input) return;
+  if (input.checked) {
+    state.selectedModules.add(input.value);
+  } else {
+    state.selectedModules.delete(input.value);
+  }
+  state.openCards.clear();
+  render();
+});
+
+clearModuleFilterButton.addEventListener("click", () => {
+  state.selectedModules.clear();
+  state.openCards.clear();
+  render();
+});
+
 showAllButton.addEventListener("click", () => {
-  categories[state.categoryIndex].items.filter(matchesSearch).forEach((item) => state.openCards.add(item.id));
+  categories[state.categoryIndex].items
+    .filter((item) => matchesFilters(item, categories[state.categoryIndex]))
+    .forEach((item) => state.openCards.add(item.id));
   renderCards();
 });
 

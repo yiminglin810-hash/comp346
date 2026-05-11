@@ -2,6 +2,7 @@ window.COMP346_DATA = [
   {
     "frequency": "Section A",
     "title": "Multiple Choice Questions",
+    "module": "Simulation Exam",
     "items": [
       {
         "title": "Q1 Zero-Crossing Rate",
@@ -258,6 +259,7 @@ window.COMP346_DATA = [
   {
     "frequency": "Section B",
     "title": "Exercises and Calculation Questions",
+    "module": "Simulation Exam",
     "items": [
       {
         "title": "Audio Feature Selection",
@@ -304,6 +306,7 @@ window.COMP346_DATA = [
   {
     "frequency": "Section C",
     "title": "Deep Dives",
+    "module": "Simulation Exam",
     "items": [
       {
         "title": "The Audio Pipeline",
@@ -330,6 +333,7 @@ window.COMP346_DATA = [
   {
     "frequency": "Section D",
     "title": "System Conceptualisation",
+    "module": "Simulation Exam",
     "items": [
       {
         "title": "Adaptive AI Drummer Design",
@@ -340,6 +344,507 @@ window.COMP346_DATA = [
         "id": "d-q1",
         "marks": 25,
         "tag": "End-to-end design"
+      }
+    ]
+  },
+  {
+    "frequency": "Lab W1",
+    "title": "Lab Week 1: Music Intelligence Foundations",
+    "module": "Lab W1",
+    "items": [
+      {
+        "title": "Lab W1 Q1 MIDI",
+        "englishQuestion": "What is MIDI, and why is it useful in music information retrieval?",
+        "chineseQuestion": "什么是 MIDI？为什么它在音乐信息检索中有用？",
+        "englishAnswer": "MIDI is a symbolic protocol for musical events, such as Note On, Note Off, pitch, velocity, and control changes. It is useful because it is lightweight, easy to edit, and gives clear note-level information for tasks such as transcription or generation.",
+        "chineseAnswer": "MIDI 是表示音乐事件的符号协议，例如 Note On、Note Off、音高、力度和控制变化。它很有用，因为文件轻、容易编辑，并且能为转录或生成等任务提供清楚的音符级信息。",
+        "id": "lab-w1-q1",
+        "tag": "MIDI"
+      },
+      {
+        "title": "Lab W1 Q2 MIDI Events",
+        "englishQuestion": "Name the main information stored in a MIDI note event.",
+        "chineseQuestion": "MIDI 音符事件中通常存储哪些主要信息？",
+        "englishAnswer": "A MIDI note event usually stores pitch, note-on time, note-off time or duration, and velocity. Pitch is commonly encoded from 0 to 127, and velocity roughly represents how strongly the note is played.",
+        "chineseAnswer": "MIDI 音符事件通常包含音高、开始时间、结束时间或持续时间，以及力度。音高通常用 0 到 127 编码，力度大致表示音符演奏得多强。",
+        "id": "lab-w1-q2",
+        "tag": "MIDI"
+      },
+      {
+        "title": "Lab W1 Q3 Music Dataset Design",
+        "englishQuestion": "What are the four important parts of a well-designed music dataset?",
+        "chineseQuestion": "一个设计良好的音乐数据集通常包含哪四个重要部分？",
+        "englishAnswer": "A good music dataset should include music metadata, audio or symbolic content, annotations or labels, and clear licensing or copyright information.",
+        "chineseAnswer": "好的音乐数据集应包含音乐元数据、音频或符号内容、标注或标签，以及清楚的许可和版权信息。",
+        "id": "lab-w1-q3",
+        "tag": "Datasets"
+      },
+      {
+        "title": "Lab W1 Q4 Task-Specific Datasets",
+        "englishQuestion": "Why are music datasets often task-specific?",
+        "chineseQuestion": "为什么音乐数据集通常是面向具体任务设计的？",
+        "englishAnswer": "Different MIR tasks need different inputs and labels. For example, transcription needs note-level labels, genre classification needs genre labels, and structure analysis needs segment or boundary annotations.",
+        "chineseAnswer": "不同 MIR 任务需要不同输入和标签。例如，转录需要音符级标签，风格分类需要 genre 标签，结构分析需要段落或边界标注。",
+        "id": "lab-w1-q4",
+        "tag": "Datasets"
+      },
+      {
+        "title": "Lab W1 Q5 Dataset Examples",
+        "englishQuestion": "Give examples of music datasets and what they are useful for.",
+        "chineseQuestion": "举例说明一些音乐数据集以及它们的用途。",
+        "englishAnswer": "The Million Song Dataset is useful for large-scale metadata and audio-feature research. ChoCo is useful for harmony and chord-related symbolic work. Schubert Winterreise is useful for aligned musicological analysis of performances and scores.",
+        "chineseAnswer": "Million Song Dataset 适合大规模元数据和音频特征研究。ChoCo 适合和声、和弦等符号音乐任务。Schubert Winterreise 适合把演奏、乐谱和音乐学分析进行对齐研究。",
+        "id": "lab-w1-q5",
+        "tag": "Datasets"
+      }
+    ]
+  },
+  {
+    "frequency": "Lab W2",
+    "title": "Lab Week 2: Time-Domain Audio Features",
+    "module": "Lab W2",
+    "items": [
+      {
+        "title": "Lab W2 Q1 Nyquist Rate",
+        "englishQuestion": "If a violin signal contains frequencies up to 20 kHz, what minimum sampling rate is needed to avoid aliasing?",
+        "chineseQuestion": "如果小提琴信号最高频率到 20 kHz，为避免混叠，最低采样率需要多少？",
+        "englishAnswer": "By the Nyquist-Shannon theorem, the sampling rate must be greater than twice the highest frequency. Twice 20 kHz is 40 kHz, so the minimum is just above 40 kHz; in practice 44.1 kHz is commonly used.",
+        "chineseAnswer": "根据 Nyquist-Shannon 定理，采样率必须大于最高频率的两倍。20 kHz 的两倍是 40 kHz，所以最低要略高于 40 kHz；实际中常用 44.1 kHz。",
+        "id": "lab-w2-q1",
+        "tag": "Sampling"
+      },
+      {
+        "title": "Lab W2 Q2 Bit Depth",
+        "englishQuestion": "What does bit depth control in digital audio?",
+        "chineseQuestion": "数字音频中的 bit depth 控制什么？",
+        "englishAnswer": "Bit depth controls amplitude resolution and dynamic range. Higher bit depth gives more possible amplitude levels and less quantisation noise.",
+        "chineseAnswer": "Bit depth 控制振幅分辨率和动态范围。bit depth 越高，可表示的振幅级别越多，量化噪声越小。",
+        "id": "lab-w2-q2",
+        "tag": "Digital audio"
+      },
+      {
+        "title": "Lab W2 Q3 ZCR Meaning",
+        "englishQuestion": "What does a high or low zero-crossing rate tell us about a sound?",
+        "chineseQuestion": "高或低 zero-crossing rate 通常说明声音有什么特点？",
+        "englishAnswer": "Low ZCR often means slow oscillation, low frequency, or tonal content such as bass. High ZCR often means fast oscillation, high-frequency content, noise, or percussive sounds.",
+        "chineseAnswer": "低 ZCR 通常表示振动慢、频率低或偏音调性，例如 bass。高 ZCR 通常表示振动快、高频成分多、噪声性强或打击类声音。",
+        "id": "lab-w2-q3",
+        "tag": "ZCR"
+      },
+      {
+        "title": "Lab W2 Q4 Framing",
+        "englishQuestion": "Why do we split audio into short frames before computing features?",
+        "chineseQuestion": "为什么计算特征前要把音频切成短帧？",
+        "englishAnswer": "Music changes over time, so one global feature is usually not enough. Short frames let us assume the signal is locally stable and track how features evolve through the song.",
+        "chineseAnswer": "音乐会随时间变化，一个全局特征通常不够。短帧让我们可以假设局部信号较稳定，并追踪特征在整首歌中的变化。",
+        "id": "lab-w2-q4",
+        "tag": "Framing"
+      },
+      {
+        "title": "Lab W2 Q5 Decibels",
+        "englishQuestion": "What does a +6 dB gain roughly mean for signal amplitude?",
+        "chineseQuestion": "+6 dB gain 对信号振幅大致意味着什么？",
+        "englishAnswer": "The decibel scale is logarithmic. A +6 dB gain roughly doubles the amplitude, which fits the way humans perceive loudness better than a linear scale.",
+        "chineseAnswer": "分贝是对数尺度。+6 dB 大致表示振幅翻倍，比线性尺度更符合人对响度的感知方式。",
+        "id": "lab-w2-q5",
+        "tag": "Decibels"
+      },
+      {
+        "title": "Lab W2 Q6 AE and ZCR",
+        "englishQuestion": "For x = [1, -1, 1, -1, 1], compute amplitude envelope and ZCR.",
+        "chineseQuestion": "对 x = [1, -1, 1, -1, 1]，计算 amplitude envelope 和 ZCR。",
+        "englishAnswer": "Amplitude envelope is max(|x|) = 1. There are 4 sign changes across 4 gaps, so ZCR = 4 / 4 = 1.0.",
+        "chineseAnswer": "Amplitude envelope 为 max(|x|) = 1。4 个相邻间隔中有 4 次符号变化，所以 ZCR = 4 / 4 = 1.0。",
+        "id": "lab-w2-q6",
+        "tag": "Calculation"
+      },
+      {
+        "title": "Lab W2 Q7 CD Audio Size",
+        "englishQuestion": "Estimate the size of one minute of uncompressed CD-quality stereo audio: 44.1 kHz, 16-bit, 2 channels.",
+        "chineseQuestion": "估算 1 分钟未压缩 CD 音质立体声音频大小：44.1 kHz、16-bit、2 声道。",
+        "englishAnswer": "Total bits = 44100 * 16 * 2 * 60 = 84,672,000 bits. This is 10,584,000 bytes, about 10 MB. If compressed audio is about 1 MB per minute, the compression ratio is roughly 10:1.",
+        "chineseAnswer": "总 bit 数 = 44100 * 16 * 2 * 60 = 84,672,000 bits。换成 bytes 是 10,584,000，约 10 MB。如果压缩音频约 1 MB/分钟，压缩比大约是 10:1。",
+        "id": "lab-w2-q7",
+        "tag": "Calculation"
+      }
+    ]
+  },
+  {
+    "frequency": "Lab W3",
+    "title": "Lab Week 3: Frequency-Domain Audio Features",
+    "module": "Lab W3",
+    "items": [
+      {
+        "title": "Lab W3 Q1 Mel Spectrogram",
+        "englishQuestion": "How do we convert a linear spectrogram to a Mel spectrogram?",
+        "chineseQuestion": "如何把 linear spectrogram 转换为 Mel spectrogram？",
+        "englishAnswer": "Convert the magnitude to a suitable scale such as dB, then apply a Mel filterbank. Mel filters are denser at low frequencies and wider at high frequencies, matching human pitch perception better.",
+        "chineseAnswer": "先把幅度转换到合适尺度，例如 dB，再应用 Mel filterbank。Mel 滤波器在低频更密、高频更宽，更贴近人类音高感知。",
+        "id": "lab-w3-q1",
+        "tag": "Mel"
+      },
+      {
+        "title": "Lab W3 Q2 Horizontal Line",
+        "englishQuestion": "What does a distinct horizontal line in a spectrogram represent?",
+        "chineseQuestion": "spectrogram 中清楚的水平线代表什么？",
+        "englishAnswer": "It represents a steady tone that keeps roughly the same frequency over time.",
+        "chineseAnswer": "它代表一个稳定音，频率在一段时间内基本保持不变。",
+        "id": "lab-w3-q2",
+        "tag": "Spectrogram"
+      },
+      {
+        "title": "Lab W3 Q3 Window Length Tradeoff",
+        "englishQuestion": "What happens if we decrease the STFT window length?",
+        "chineseQuestion": "如果减小 STFT window length，会发生什么？",
+        "englishAnswer": "Shorter windows improve time resolution but worsen frequency resolution. This is the time-frequency tradeoff.",
+        "chineseAnswer": "较短窗口会提高时间分辨率，但降低频率分辨率。这就是 time-frequency tradeoff。",
+        "id": "lab-w3-q3",
+        "tag": "STFT"
+      },
+      {
+        "title": "Lab W3 Q4 Spectral Centroid",
+        "englishQuestion": "What does spectral centroid measure?",
+        "chineseQuestion": "spectral centroid 衡量什么？",
+        "englishAnswer": "Spectral centroid is the centre of mass of the spectrum. A high centroid means more high-frequency energy and a brighter sound; a low centroid means more low-frequency energy.",
+        "chineseAnswer": "Spectral centroid 是频谱的重心。centroid 高说明高频能量多、声音更明亮；centroid 低说明低频能量更多。",
+        "id": "lab-w3-q4",
+        "tag": "Centroid"
+      },
+      {
+        "title": "Lab W3 Q5 Chroma and Octaves",
+        "englishQuestion": "Why do C4 and C5 have similar chroma vectors?",
+        "chineseQuestion": "为什么 C4 和 C5 的 chroma vectors 很相似？",
+        "englishAnswer": "Chroma folds pitches into 12 pitch classes and ignores octave information. C4 and C5 are both pitch class C, so their chroma representation is similar.",
+        "chineseAnswer": "Chroma 把音高折叠到 12 个 pitch classes 中，忽略八度信息。C4 和 C5 都属于 C 这个 pitch class，所以 chroma 表示相似。",
+        "id": "lab-w3-q5",
+        "tag": "Chroma"
+      },
+      {
+        "title": "Lab W3 Q6 Spectral Flux",
+        "englishQuestion": "Why does spectral flux peak when a new note is struck?",
+        "chineseQuestion": "为什么新音符被敲下时 spectral flux 会出现峰值？",
+        "englishAnswer": "A new note suddenly adds energy across frequency bins. Spectral flux measures positive changes in spectral energy, so it becomes large at onsets.",
+        "chineseAnswer": "新音符会突然在多个频率 bin 中加入能量。Spectral flux 衡量频谱能量的正向变化，所以在 onset 处变大。",
+        "id": "lab-w3-q6",
+        "tag": "Flux"
+      },
+      {
+        "title": "Lab W3 Q7 Drawing Spectrograms",
+        "englishQuestion": "How would a siren, a clap, and a chord look in a spectrogram?",
+        "chineseQuestion": "siren、clap 和 chord 在 spectrogram 中大致长什么样？",
+        "englishAnswer": "A siren looks like a rising then falling curve. A clap looks like a thin vertical broadband line. A chord looks like several parallel horizontal lines.",
+        "chineseAnswer": "Siren 像先升后降的曲线。Clap 像很窄的垂直宽频线。Chord 像几条平行的水平线。",
+        "id": "lab-w3-q7",
+        "tag": "Spectrogram"
+      },
+      {
+        "title": "Lab W3 Q8 Frequency Resolution",
+        "englishQuestion": "For sampling rate 44.1 kHz and N = 1024, what is the frequency bin width, and can we distinguish 100 Hz from 110 Hz?",
+        "chineseQuestion": "采样率 44.1 kHz、N = 1024 时频率 bin 宽度是多少？能区分 100 Hz 和 110 Hz 吗？",
+        "englishAnswer": "Bin width is SR / N = 44100 / 1024 = about 43.06 Hz. The gap between 100 Hz and 110 Hz is only 10 Hz, so this FFT size cannot distinguish them well; a larger N is needed.",
+        "chineseAnswer": "Bin 宽度为 SR / N = 44100 / 1024，约 43.06 Hz。100 Hz 和 110 Hz 只差 10 Hz，所以这个 FFT 大小很难区分它们；需要更大的 N。",
+        "id": "lab-w3-q8",
+        "tag": "Calculation"
+      }
+    ]
+  },
+  {
+    "frequency": "Lab W4",
+    "title": "Lab Week 4: Music Structure Analysis",
+    "module": "Lab W4",
+    "items": [
+      {
+        "title": "Lab W4 Q1 SSM Intuition",
+        "englishQuestion": "What is a self-similarity matrix in music structure analysis?",
+        "chineseQuestion": "音乐结构分析中的 self-similarity matrix 是什么？",
+        "englishAnswer": "An SSM compares every time frame with every other time frame. Similar blocks reveal repeated or related sections. With a symmetric similarity metric, the SSM is symmetric and has a strong main diagonal.",
+        "chineseAnswer": "SSM 把每个时间帧和所有其他时间帧比较。相似块可以显示重复或相关段落。若相似度度量对称，SSM 也是对称的，并且主对角线很强。",
+        "id": "lab-w4-q1",
+        "tag": "SSM"
+      },
+      {
+        "title": "Lab W4 Q2 Feature Choice",
+        "englishQuestion": "Which feature is often suitable for comparing timbre or texture between music sections?",
+        "chineseQuestion": "比较音乐段落之间的音色或质感时，常用哪类特征？",
+        "englishAnswer": "MFCCs are often suitable because they describe the spectral envelope and timbral shape of audio, which helps compare section texture.",
+        "chineseAnswer": "MFCCs 常较合适，因为它们描述频谱包络和音色形状，有助于比较段落质感。",
+        "id": "lab-w4-q2",
+        "tag": "Features"
+      },
+      {
+        "title": "Lab W4 Q3 Median Filter",
+        "englishQuestion": "Why can median filtering be better than moving average before structure analysis?",
+        "chineseQuestion": "为什么结构分析前 median filtering 可能比 moving average 更好？",
+        "englishAnswer": "Both smooth local noise, but median filtering preserves sharp boundaries better. Moving average can blur transitions between sections.",
+        "chineseAnswer": "两者都能平滑局部噪声，但 median filtering 更能保留尖锐边界。Moving average 可能把段落转换处模糊掉。",
+        "id": "lab-w4-q3",
+        "tag": "Filtering"
+      },
+      {
+        "title": "Lab W4 Q4 Diagonal Smoothing Risk",
+        "englishQuestion": "Why can a large diagonal smoothing filter be risky when tempo changes?",
+        "chineseQuestion": "当 tempo 变化时，为什么很大的 diagonal smoothing filter 有风险？",
+        "englishAnswer": "Tempo changes warp repeated paths so they may not stay perfectly diagonal. A large strict diagonal filter can blur or destroy these warped repetition paths.",
+        "chineseAnswer": "Tempo 变化会让重复路径发生弯曲，不再是完美对角线。过大的严格对角滤波可能模糊或破坏这些弯曲的重复路径。",
+        "id": "lab-w4-q4",
+        "tag": "Smoothing"
+      },
+      {
+        "title": "Lab W4 Q5 Novelty Kernel Size",
+        "englishQuestion": "What is the effect of using a larger checkerboard kernel for novelty-based segmentation?",
+        "chineseQuestion": "novelty-based segmentation 中使用更大的 checkerboard kernel 有什么效果？",
+        "englishAnswer": "A larger kernel uses more temporal context, smooths local variation, and focuses more on coarse or global section changes.",
+        "chineseAnswer": "更大的 kernel 使用更多时间上下文，平滑局部变化，更关注粗粒度或全局段落变化。",
+        "id": "lab-w4-q5",
+        "tag": "Segmentation"
+      },
+      {
+        "title": "Lab W4 Q6 Multiple Filtering",
+        "englishQuestion": "How does multiple filtering help detect repetitions under tempo differences?",
+        "chineseQuestion": "multiple filtering 如何帮助检测 tempo 不同情况下的重复？",
+        "englishAnswer": "It filters the SSM along several angular directions and takes the best response. This captures paths that are not exactly diagonal because of tempo changes.",
+        "chineseAnswer": "它沿多个角度方向对 SSM 滤波，并取最佳响应。这样可以捕捉因 tempo 变化而不完全对角的路径。",
+        "id": "lab-w4-q6",
+        "tag": "Filtering"
+      },
+      {
+        "title": "Lab W4 Q7 Pairwise Evaluation",
+        "englishQuestion": "Why use pairwise classification for evaluating structure grouping?",
+        "chineseQuestion": "为什么结构分组评估中使用 pairwise classification？",
+        "englishAnswer": "Section labels are arbitrary, so label names cannot be compared directly. Pairwise evaluation checks whether each pair of frames is correctly predicted as same-section or different-section.",
+        "chineseAnswer": "段落标签名字是任意的，不能直接比较标签名称。Pairwise evaluation 检查每一对帧是否被正确判断为同段或不同段。",
+        "id": "lab-w4-q7",
+        "tag": "Evaluation"
+      },
+      {
+        "title": "Lab W4 Q8 Boundary Metrics",
+        "englishQuestion": "If 10 boundaries are predicted, 8 are in ground truth, and 6 match within tolerance, compute precision, recall, and F-score.",
+        "chineseQuestion": "预测 10 个边界，真实 8 个，容忍窗口内匹配 6 个，计算 precision、recall 和 F-score。",
+        "englishAnswer": "Precision = 6 / 10 = 0.6. Recall = 6 / 8 = 0.75. F-score = 2PR / (P + R) = about 0.667.",
+        "chineseAnswer": "Precision = 6 / 10 = 0.6。Recall = 6 / 8 = 0.75。F-score = 2PR / (P + R)，约 0.667。",
+        "id": "lab-w4-q8",
+        "tag": "Calculation"
+      },
+      {
+        "title": "Lab W4 Q9 Transposition-Invariant SSM",
+        "englishQuestion": "How can chroma features make an SSM invariant to key transposition?",
+        "chineseQuestion": "chroma 特征如何让 SSM 对转调不敏感？",
+        "englishAnswer": "A key shift corresponds to a cyclic shift of the 12-dimensional chroma vector. Compute similarity under all 12 shifts and take the maximum similarity. For a +5 semitone modulation, shift by 5 pitch classes.",
+        "chineseAnswer": "转调对应 12 维 chroma 向量的循环移位。对 12 种移位都计算相似度，并取最大值。若转调 +5 个半音，就移位 5 个 pitch classes。",
+        "id": "lab-w4-q9",
+        "tag": "Chroma"
+      }
+    ]
+  },
+  {
+    "frequency": "Lab W7",
+    "title": "Lab Week 7: Content-Based Audio Retrieval",
+    "module": "Lab W7",
+    "items": [
+      {
+        "title": "Lab W7 Q1 Hash Time Difference",
+        "englishQuestion": "Why do audio fingerprint hashes use time difference rather than absolute time?",
+        "chineseQuestion": "为什么 audio fingerprint hash 使用时间差而不是绝对时间？",
+        "englishAnswer": "Time difference is translation-invariant. A query clip may start anywhere, but the time gap between two peaks stays the same.",
+        "chineseAnswer": "时间差具有平移不变性。查询片段可以从歌曲任意位置开始，但两个峰之间的时间间隔保持不变。",
+        "id": "lab-w7-q1",
+        "tag": "Fingerprinting"
+      },
+      {
+        "title": "Lab W7 Q2 Embedding Search",
+        "englishQuestion": "How is dense embedding search usually scaled to large music collections?",
+        "chineseQuestion": "大规模音乐库中的 dense embedding search 通常如何扩展？",
+        "englishAnswer": "A query is embedded and compared with database embeddings, often using cosine similarity. At large scale, systems use approximate nearest-neighbour vector databases such as FAISS, Pinecone, Milvus, or Vespa.",
+        "chineseAnswer": "先把 query 转成 embedding，再与数据库 embedding 比较，常用 cosine similarity。大规模时通常用近似最近邻向量数据库，例如 FAISS、Pinecone、Milvus 或 Vespa。",
+        "id": "lab-w7-q2",
+        "tag": "Embeddings"
+      },
+      {
+        "title": "Lab W7 Q3 Variable Duration CNN",
+        "englishQuestion": "How can a CNN handle variable-duration audio clips for retrieval?",
+        "chineseQuestion": "CNN 如何处理不同长度的音频片段用于检索？",
+        "englishAnswer": "Global average pooling over time can collapse variable-length frame outputs into one fixed-size track embedding.",
+        "chineseAnswer": "可以在时间维度上做 global average pooling，把不同长度的帧输出压缩成一个固定大小的 track embedding。",
+        "id": "lab-w7-q3",
+        "tag": "CNN"
+      },
+      {
+        "title": "Lab W7 Q4 Horizontal CNN Filter",
+        "englishQuestion": "What does a horizontal 1 x W CNN filter capture on a spectrogram?",
+        "chineseQuestion": "spectrogram 上水平的 1 x W CNN filter 捕捉什么？",
+        "englishAnswer": "It captures temporal evolution in a narrow frequency band, such as rhythm, sustain, or repeated activity, and is relatively local in frequency.",
+        "chineseAnswer": "它捕捉窄频带内随时间的变化，例如节奏、延音或重复活动，并且在频率上比较局部。",
+        "id": "lab-w7-q4",
+        "tag": "CNN"
+      },
+      {
+        "title": "Lab W7 Q5 Imbalanced Accuracy",
+        "englishQuestion": "Why is accuracy misleading for an imbalanced genre classifier?",
+        "chineseQuestion": "为什么不平衡 genre classifier 上 accuracy 可能误导？",
+        "englishAnswer": "A lazy model can always predict the majority class and still get very high accuracy, such as 99%, while completely failing on the minority class.",
+        "chineseAnswer": "懒模型可以一直预测多数类，仍得到很高 accuracy，例如 99%，但完全无法识别少数类。",
+        "id": "lab-w7-q5",
+        "tag": "Evaluation"
+      },
+      {
+        "title": "Lab W7 Q6 Single-Peak Hash Problem",
+        "englishQuestion": "Why is a single-peak hash weak for audio fingerprinting?",
+        "chineseQuestion": "为什么 single-peak hash 对 audio fingerprinting 很弱？",
+        "englishAnswer": "It has low entropy and too few possible hash values, so many unrelated peaks collide. This creates long inverted lists and many false positives.",
+        "chineseAnswer": "它信息量低、可能的 hash 值太少，很多无关峰会碰撞，导致 inverted list 很长、false positives 很多。",
+        "id": "lab-w7-q6",
+        "tag": "Hashing"
+      },
+      {
+        "title": "Lab W7 Q7 MAP",
+        "englishQuestion": "What does Mean Average Precision reward in retrieval?",
+        "chineseQuestion": "Mean Average Precision 在检索中奖励什么？",
+        "englishAnswer": "MAP rewards systems that rank relevant documents near the top and also considers the full ranked list.",
+        "chineseAnswer": "MAP 奖励把相关结果排在前面的系统，同时也考虑整个排序列表。",
+        "id": "lab-w7-q7",
+        "tag": "Metrics"
+      },
+      {
+        "title": "Lab W7 Q8 Weak Supervision",
+        "englishQuestion": "What is weak supervision in metric learning for music retrieval?",
+        "chineseQuestion": "音乐检索 metric learning 中 weak supervision 是什么？",
+        "englishAnswer": "It uses indirect metadata, such as artist IDs or track relationships, to create positive and negative pairs without full manual annotations.",
+        "chineseAnswer": "它用间接元数据，例如 artist ID 或曲目关系，生成正负样本对，而不需要完整人工标注。",
+        "id": "lab-w7-q8",
+        "tag": "Metric learning"
+      },
+      {
+        "title": "Lab W7 Q9 Triplet Loss",
+        "englishQuestion": "What is the idea of triplet loss?",
+        "chineseQuestion": "triplet loss 的核心思想是什么？",
+        "englishAnswer": "Triplet loss pushes the anchor closer to a positive example than to a negative example by at least a margin alpha.",
+        "chineseAnswer": "Triplet loss 让 anchor 到 positive 的距离比到 negative 的距离至少小一个 margin alpha。",
+        "id": "lab-w7-q9",
+        "tag": "Metric learning"
+      },
+      {
+        "title": "Lab W7 Q10 Hash Space Size",
+        "englishQuestion": "If k0 and k1 use 8 bits each and delta t uses 9 bits, how many possible pair hashes are there?",
+        "chineseQuestion": "如果 k0 和 k1 各用 8 bits，delta t 用 9 bits，总共有多少可能的峰对 hash？",
+        "englishAnswer": "A single 8-bit peak has 2^8 = 256 possibilities. A pair hash has 2^(8+8+9) = 2^25 = 33,554,432 possibilities.",
+        "chineseAnswer": "单个 8-bit peak 有 2^8 = 256 种可能。峰对 hash 有 2^(8+8+9) = 2^25 = 33,554,432 种可能。",
+        "id": "lab-w7-q10",
+        "tag": "Calculation"
+      }
+    ]
+  },
+  {
+    "frequency": "Lab W8-9",
+    "title": "Lab Week 8-9: Symbolic Music Generation",
+    "module": "Lab W8-9",
+    "items": [
+      {
+        "title": "Lab W8-9 Q1 Evaluation Types",
+        "englishQuestion": "Name common ways to evaluate AI-generated music.",
+        "chineseQuestion": "评价 AI 生成音乐的常见方式有哪些？",
+        "englishAnswer": "Common methods include music modelling metrics, statistical comparison with training data, expert analysis, and listening tests.",
+        "chineseAnswer": "常见方法包括音乐建模指标、与训练数据的统计比较、专家分析和听众测试。",
+        "id": "lab-w89-q1",
+        "tag": "Evaluation"
+      },
+      {
+        "title": "Lab W8-9 Q2 Autoregressive Continuation",
+        "englishQuestion": "What does an autoregressive music model predict?",
+        "chineseQuestion": "自回归音乐模型预测什么？",
+        "englishAnswer": "It predicts the next token given previous tokens, for example predicting x(t+1) from x(1), ..., x(t).",
+        "chineseAnswer": "它根据之前的 token 预测下一个 token，例如根据 x(1) 到 x(t) 预测 x(t+1)。",
+        "id": "lab-w89-q2",
+        "tag": "Autoregressive"
+      },
+      {
+        "title": "Lab W8-9 Q3 Piano-Roll Sustains",
+        "englishQuestion": "Why can piano-roll representation make sustained notes difficult for models?",
+        "chineseQuestion": "为什么 piano-roll 表示会让模型难以处理延音？",
+        "englishAnswer": "A sustained note is repeated across many time steps, making sequences long and long-term dependencies harder. It can also confuse sustain with repeated re-strikes.",
+        "chineseAnswer": "延音会在许多时间步中重复出现，使序列变长、长期依赖更难学习，也可能混淆延音和重新击键。",
+        "id": "lab-w89-q3",
+        "tag": "Representation"
+      },
+      {
+        "title": "Lab W8-9 Q4 N-Gram Limitation",
+        "englishQuestion": "What is the main limitation of an n-gram music model?",
+        "chineseQuestion": "n-gram 音乐模型的主要局限是什么？",
+        "englishAnswer": "It only conditions on the last n-1 tokens, so it cannot capture long-term structure or wide musical context well.",
+        "chineseAnswer": "它只依赖最近的 n-1 个 token，因此难以捕捉长期结构或更宽的音乐上下文。",
+        "id": "lab-w89-q4",
+        "tag": "N-gram"
+      },
+      {
+        "title": "Lab W8-9 Q5 LSTM vs Transformer",
+        "englishQuestion": "Why might an LSTM be suitable for endless live generation compared with a standard Transformer?",
+        "chineseQuestion": "相比标准 Transformer，为什么 LSTM 可能更适合无限实时生成？",
+        "englishAnswer": "An LSTM updates hidden and cell states step by step, so it can theoretically continue indefinitely. A standard Transformer has a fixed context window and attention memory grows with sequence length.",
+        "chineseAnswer": "LSTM 逐步更新 hidden state 和 cell state，理论上可以一直生成。标准 Transformer 有固定上下文窗口，并且 attention 内存随序列长度增长。",
+        "id": "lab-w89-q5",
+        "tag": "Models"
+      },
+      {
+        "title": "Lab W8-9 Q6 Encoder Bottleneck",
+        "englishQuestion": "What is the encoder bottleneck problem in sequence-to-sequence models?",
+        "chineseQuestion": "sequence-to-sequence 模型中的 encoder bottleneck 是什么？",
+        "englishAnswer": "The whole input is compressed into one fixed-size final hidden vector. Long inputs can lose early or detailed information.",
+        "chineseAnswer": "整个输入被压缩成一个固定大小的最终 hidden vector。输入较长时，早期或细节信息容易丢失。",
+        "id": "lab-w89-q6",
+        "tag": "Seq2seq"
+      },
+      {
+        "title": "Lab W8-9 Q7 Positional Encoding",
+        "englishQuestion": "Why do Transformers need positional encoding?",
+        "chineseQuestion": "为什么 Transformer 需要 positional encoding？",
+        "englishAnswer": "Self-attention alone is permutation-invariant and does not know token order. Positional encodings add order information, while RNNs get order from sequential processing.",
+        "chineseAnswer": "纯 self-attention 对顺序不敏感，不知道 token 的位置。Positional encoding 加入顺序信息，而 RNN 通过按顺序处理天然获得顺序。",
+        "id": "lab-w89-q7",
+        "tag": "Transformer"
+      },
+      {
+        "title": "Lab W8-9 Q8 Masked Self-Attention",
+        "englishQuestion": "How does masked self-attention stop a Transformer from seeing future tokens?",
+        "chineseQuestion": "masked self-attention 如何阻止 Transformer 看到未来 token？",
+        "englishAnswer": "It sets the upper-triangular future positions in the attention score matrix to negative infinity before softmax, so future attention weights become zero.",
+        "chineseAnswer": "它在 softmax 前把 attention score 矩阵中代表未来位置的上三角部分设为负无穷，使未来 token 的注意力权重变为 0。",
+        "id": "lab-w89-q8",
+        "tag": "Transformer"
+      },
+      {
+        "title": "Lab W8-9 Q9 Statistical Evaluation",
+        "englishQuestion": "What is the strength and weakness of statistical comparison for generated music?",
+        "chineseQuestion": "用统计比较评价生成音乐的优点和缺点是什么？",
+        "englishAnswer": "It gives objective evidence that generated music matches training-data statistics. However, it does not fully measure aesthetics, compositional quality, or listener preference.",
+        "chineseAnswer": "它能客观说明生成音乐是否接近训练数据统计特征。但它不能充分衡量审美、作曲质量或听众偏好。",
+        "id": "lab-w89-q9",
+        "tag": "Evaluation"
+      },
+      {
+        "title": "Lab W8-9 Q10 LSTM Cell Calculation",
+        "englishQuestion": "For an LSTM, how is the new cell state C(t) computed, and what is the result for C(t-1) = [0.7, -0.3, 0.5], f = [1, 0, 0.5], candidate = [0.2, 0.8, -0.1], i = [0, 1, 0.5]?",
+        "chineseQuestion": "LSTM 中新的 cell state C(t) 如何计算？若 C(t-1)=[0.7,-0.3,0.5]，f=[1,0,0.5]，candidate=[0.2,0.8,-0.1]，i=[0,1,0.5]，结果是多少？",
+        "englishAnswer": "Use C(t) = C(t-1) * f + candidate * i, element by element. Old memory part is [0.7, 0, 0.25], new write part is [0, 0.8, -0.05], so C(t) = [0.7, 0.8, 0.2].",
+        "chineseAnswer": "逐元素计算 C(t) = C(t-1) * f + candidate * i。旧记忆部分为 [0.7, 0, 0.25]，新写入部分为 [0, 0.8, -0.05]，所以 C(t) = [0.7, 0.8, 0.2]。",
+        "id": "lab-w89-q10",
+        "tag": "Calculation"
+      },
+      {
+        "title": "Lab W8-9 Q11 Perplexity Limits",
+        "englishQuestion": "Why is log-likelihood or perplexity not enough to evaluate generated music?",
+        "chineseQuestion": "为什么 log-likelihood 或 perplexity 不足以评价生成音乐？",
+        "englishAnswer": "They measure next-token prediction, not whether the music is beautiful, novel, structured, or free from plagiarism.",
+        "chineseAnswer": "它们衡量的是 next-token prediction，而不是音乐是否好听、新颖、有结构，或是否避免抄袭。",
+        "id": "lab-w89-q11",
+        "tag": "Evaluation"
+      },
+      {
+        "title": "Lab W8-9 Q12 Evaluation Pipeline",
+        "englishQuestion": "Give a good evaluation pipeline for an AI music generator.",
+        "chineseQuestion": "给出一个评价 AI 音乐生成器的合理流程。",
+        "englishAnswer": "Use model metrics such as perplexity, compare generated statistics with training data, check novelty or plagiarism with nearest-neighbour similarity, ask experts to analyse structure and harmony, and run listening tests for musicality and expressiveness.",
+        "chineseAnswer": "先用 perplexity 等模型指标，再比较生成结果和训练数据的统计特征，用 nearest-neighbour similarity 检查新颖性或抄袭，请专家分析结构与和声，最后用听众测试评价音乐性和表现力。",
+        "id": "lab-w89-q12",
+        "tag": "Evaluation"
       }
     ]
   }
